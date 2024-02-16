@@ -10,7 +10,7 @@ type CardProps = React.ComponentProps<typeof Card>;
 export default function ContactPage({ className, ...props }: CardProps) {
   return (
     <div className="px-20 py-10">
-      <Card className="bg-[#f8f8f8] shadow-lg">
+      <Card className="bg-[#f9f9f9] shadow-lg">
         <div className="px-2">
           <Path tab={"Contact"} />
         </div>
@@ -21,20 +21,20 @@ export default function ContactPage({ className, ...props }: CardProps) {
           <div className="flex flex-wrap gap-4">
             <div className="grid grid-cols-6 gap-4">
               <ContactCard
-                icon={<MapPin color="blue" size={30}/>}
+                icon={<MapPin color="blue" size={30} />}
                 heading={"Our Address"}
                 content={`Engineer-in-Chief, Jal Shakti Vibhag, Jal Shakti Bhawan, Shimla. PIN -
           171005 (Himachal Pradesh) India`}
                 span={"3"}
               />
               <ContactCard
-                icon={<MailIcon color="blue" size={30}/>}
+                icon={<MailIcon color="blue" size={30} />}
                 heading={"Email Us"}
                 content={"hpirrg@rediffmail.com"}
                 span={"2"}
               />
               <ContactCard
-                icon={<PhoneIcon color="blue" size={30}/>}
+                icon={<PhoneIcon color="blue" size={30} />}
                 heading={"Call Us"}
                 content={"0177 2830241"}
                 span={"1"}

@@ -37,7 +37,7 @@ export function StickyNavbar() {
         className="p-1 font-bold hover:text-blue-400 text-lg"
         placeholder={undefined}
       >
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           Home
         </a>
       </Typography>
