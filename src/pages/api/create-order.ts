@@ -11,7 +11,7 @@ export default async function handler(
     const amount = body.amount;
     const currency = "INR";
     const options = {
-      amount: (amount*100).toString(),
+      amount: (amount * 100).toString(),
       currency,
       receipt: `bill_rcptid_${body.billNo}`,
       payment_capture,
