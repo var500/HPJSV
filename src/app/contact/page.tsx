@@ -5,9 +5,8 @@ import Path from "@/components/Path";
 import Iframe from "react-iframe";
 import { MailIcon, MapPin, PhoneIcon } from "lucide-react";
 import ContactCard from "@/components/ContactCard";
-type CardProps = React.ComponentProps<typeof Card>;
 
-export default function ContactPage({ className, ...props }: CardProps) {
+export default function ContactPage() {
   return (
     <div className="px-20 py-10">
       <Card className="bg-[#f9f9f9] shadow-lg">
@@ -17,27 +16,28 @@ export default function ContactPage({ className, ...props }: CardProps) {
         <CardHeader>
           <CardTitle>Contact Us</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4">
+        <CardContent className="flex gap-4">
           <div className="flex flex-wrap gap-4">
             <div className="grid grid-cols-6 gap-4">
-              <ContactCard
-                icon={<MapPin color="blue" size={30} />}
-                heading={"Our Address"}
-                content={`Engineer-in-Chief, Jal Shakti Vibhag, Jal Shakti Bhawan, Shimla. PIN -
+              <div className="col-span-3">
+                <ContactCard
+                  icon={<MapPin color="blue" size={30} />}
+                  heading={"Our Address"}
+                  content={`Engineer-in-Chief, Jal Shakti Vibhag, Jal Shakti Bhawan, Shimla. PIN -
           171005 (Himachal Pradesh) India`}
-                span={"3"}
-              />
-              <ContactCard
-                icon={<MailIcon color="blue" size={30} />}
-                heading={"Email Us"}
-                content={"hpirrg@rediffmail.com"}
-                span={"2"}
-              />
+                />
+              </div>
+              <div className="col-span-2">
+                <ContactCard
+                  icon={<MailIcon color="blue" size={30} />}
+                  heading={"Email Us"}
+                  content={"hpirrg@rediffmail.com"}
+                />
+              </div>
               <ContactCard
                 icon={<PhoneIcon color="blue" size={30} />}
                 heading={"Call Us"}
                 content={"0177 2830241"}
-                span={"1"}
               />
             </div>
             <iframe
