@@ -61,7 +61,7 @@ export function StickyNavbar() {
                 Generated Water Bill Locations
               </Link>
               <Link
-                href={""}
+                href={"/pay-water-bill"}
                 className="hover:text-blue-400 font-bold hover:cursor-pointer"
               >
                 Pay IPH Water Bills Online
@@ -100,7 +100,7 @@ export function StickyNavbar() {
         className="p-1 font-bold hover:text-blue-400 text-lg"
         placeholder={undefined}
       >
-        <a href="#" className="flex items-center">
+        <a href="/contact" className="flex items-center">
           Contact
         </a>
       </Typography>

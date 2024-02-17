@@ -1,0 +1,38 @@
+[
+    {
+        "id": "1",
+        "meter-no":"",
+        "account-no":"",
+        "contact-number": "123456",
+        "name": "AAA",
+        "current-reading": "1721",
+        "previous-reading": "1620",
+        "last-payment-date":"16-02-2024",
+        "outstanding": "310",
+        "advance": "0"
+    },
+    {
+        "id": "2",
+        "meter-no":"",
+        "account-no":"",
+        "contact-number": "1147852",
+        "name": "BBB",
+        "current-reading": "1900",
+        "previous-reading": "1700",
+        "last-payment-date":"10-02-24",
+        "outstanding": "0",
+        "advance": "100"
+    },
+    {
+        "id": "3",
+        "meter-no":"",
+        "account-no":"",
+        "contact-number": "523694",
+        "name": "CCC",
+        "previous-reading": "1700",
+        "current-reading": "1825",
+        "last-payment-date":"16-02-2024",
+        "outstanding": "0",
+        "advance": "0"
+    }
+]
