@@ -22,7 +22,7 @@ export default function BillHeader({data}:{data:BillingData}) {
           <p className="font-semibold"> Consumer Information</p>
           <p> {data.Consumer.name}</p>
           <p> {data.Consumer.address1}</p>
-          <p> Ward No: {data.Consumer.ward}</p>
+          <p> {data.Consumer.ward?`Ward No: ${data.Consumer.ward}`:''}</p>
           <p> {data.Consumer.contactNumber}</p>
         </div>
         <div className="flex flex-col font-semibold">

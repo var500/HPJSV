@@ -5,6 +5,7 @@ import { Input } from "../ui/input";
 import { BillingData } from "@/utils/types";
 import Data from "@/utils/dummyData.json";
 import { useToast } from "@/components/ui/use-toast";
+import { initial } from "@/utils/consts";
 
 export default function BillSearch({
   onFilterData,
@@ -20,6 +21,7 @@ export default function BillSearch({
     if (BillingDetails.length > 0) {
       onFilterData(BillingDetails[0]);
     } else {
+      onFilterData(initial);
       toast({
         variant: "destructive",
         title: "Account Not found",

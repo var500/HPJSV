@@ -2,47 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Path from "@/components/Common/Path";
-import { Button, Typography } from "@material-tailwind/react";
-import { Input } from "@/components/ui/input";
 import AccountDetails from "@/components/Bill-Payment-Components/UsageSummary";
 import ChargesSummary from "@/components/Bill-Payment-Components/ChargesSummary";
 import Note from "@/components/Common/Note";
 import PaymentSlip from "@/components/Payment-Slip-Components/PaymentSlip";
 import BillHeader from "@/components/Bill-Payment-Components/BillHeader";
 import BillSearch from "@/components/Bill-Payment-Components/BillSearch";
-
-import Data from "@/utils/dummyData.json";
 import { BillingData } from "@/utils/types";
-
-const initial: BillingData = {
-  id: "",
-  Consumer: {
-    name: "",
-    address1: "",
-    ward: "",
-    contactNumber: "",
-  },
-  AccountDetails: {
-    meterNo: "",
-    accountNo: "",
-  },
-  Usage: {
-    oldReading: "",
-    newReading: "",
-    netReadingM3: "",
-    netReadingLtr: "",
-  },
-  chargesSummary: {
-    prevBalance: "",
-  },
-  BillingInfo: {
-    billNo: "",
-    billDate: "",
-    dueDate: "",
-    billMonth: "",
-    sewerage: "",
-  },
-};
 
 export default function OnlineBill() {
   const [data, setData] = useState<BillingData>();
