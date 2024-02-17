@@ -2,7 +2,9 @@ import { BillingData } from "@/utils/types";
 import React from "react";
 
 export default function BillHeader({data}:{data:BillingData}) {
-  const totalPayableAmount = (parseFloat(data.Usage.netReadingM3)*13.86).toFixed(2);
+  const currentWaterCharges = parseFloat(data.Usage.netReadingM3) * 13.86;
+  const swerageCharges = currentWaterCharges * 0.3;
+  const totalPayable = Math.round(currentWaterCharges + swerageCharges);
   return (
     <>
       <div className="flex justify-end">
@@ -43,7 +45,7 @@ export default function BillHeader({data}:{data:BillingData}) {
             Swerage: <span className="font-normal">{data.BillingInfo.sewerage}</span>
           </p>
           <p>
-            Amount Payble: <span className="font-normal">{totalPayableAmount}</span>
+            Amount Payble: <span className="font-normal">{totalPayable.toFixed(2)}</span>
           </p>
         </div>
       </div>
