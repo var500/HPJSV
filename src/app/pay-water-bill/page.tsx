@@ -9,6 +9,7 @@ import PaymentSlip from "@/components/Payment-Slip-Components/PaymentSlip";
 import BillHeader from "@/components/Bill-Payment-Components/BillHeader";
 import BillSearch from "@/components/Bill-Payment-Components/BillSearch";
 import { BillingData } from "@/utils/types";
+import RazorpayButton from "@/components/Bill-Payment-Components/RazorpayButton";
 
 export default function OnlineBill() {
   const [data, setData] = useState<BillingData>();
@@ -47,9 +48,11 @@ export default function OnlineBill() {
                   <ChargesSummary data={data} />
                 </div>
               </div>
+              <div className="flex justify-end w-full">
+                <RazorpayButton data={data} />
+              </div>
             </>
           )}
-
           <Note />
 
           {/* <div className="border-dashed border-t-2 border-black" />
