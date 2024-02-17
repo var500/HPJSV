@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/hover-card";
 
 import Image from "next/image";
-import banner from "@/app/assets/jsv.png";
+import banner from "@/assets/jsv.png";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 export function StickyNavbar() {

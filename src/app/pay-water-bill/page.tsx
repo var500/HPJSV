@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Path from "@/components/Common/Path";
 import { Button, Typography } from "@material-tailwind/react";
@@ -11,7 +11,50 @@ import PaymentSlip from "@/components/Payment-Slip-Components/PaymentSlip";
 import BillHeader from "@/components/Bill-Payment-Components/BillHeader";
 import BillSearch from "@/components/Bill-Payment-Components/BillSearch";
 
+import Data from "@/utils/dummyData.json";
+import { BillingData } from "@/utils/types";
+
+const initial: BillingData = {
+  id: "",
+  Consumer: {
+    name: "",
+    address1: "",
+    ward: "",
+    contactNumber: "",
+  },
+  AccountDetails: {
+    meterNo: "",
+    accountNo: "",
+  },
+  Usage: {
+    oldReading: "",
+    newReading: "",
+    netReadingM3: "",
+    netReadingLtr: "",
+  },
+  chargesSummary: {
+    prevBalance: "",
+  },
+  BillingInfo: {
+    billNo: "",
+    billDate: "",
+    dueDate: "",
+    billMonth: "",
+    sewerage: "",
+  },
+};
+
 export default function OnlineBill() {
+  const [data, setData] = useState<BillingData>();
+
+  const handleFilterData = (data: BillingData) => {
+    setData(data);
+  };
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div className="px-10 md:px-20 py-10">
       <Card className="bg-[#f9f9f9] shadow-lg">
@@ -25,18 +68,21 @@ export default function OnlineBill() {
         </CardHeader>
 
         <CardContent className="ml-0 md:ml-32 flex flex-col justify-start gap-4 pr-10 md:pr-40">
+          <BillSearch onFilterData={handleFilterData} />
+          {data && (
+            <>
+              <BillHeader data={data} />
 
-          <BillSearch />
-          <BillHeader />
-
-          <div className="grid grid-col-1 xl:grid-cols-3 gap-16">
-            <div className="col-span-1">
-              <AccountDetails />
-            </div>
-            <div className="col-span-1 md:col-span-2">
-              <ChargesSummary />
-            </div>
-          </div>
+              <div className="grid grid-col-1 xl:grid-cols-3 gap-16">
+                <div className="col-span-1">
+                  <AccountDetails data={data} />
+                </div>
+                <div className="col-span-1 md:col-span-2">
+                  <ChargesSummary data={data} />
+                </div>
+              </div>
+            </>
+          )}
 
           <Note />
 

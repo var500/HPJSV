@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Logo from "@/app/assets/logo-f.png";
+import Logo from "@/assets/logo-f.png";
 export default function Footer() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 px-10 md:px-28 py-5 bg-gradient-to-r from-black to-gray-500 text-white gap-4 md:gap-12">

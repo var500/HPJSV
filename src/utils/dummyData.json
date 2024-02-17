@@ -1,0 +1,90 @@
+[
+    {
+        "id": "1",
+        "Consumer": {
+            "name": "Smt Sunanda Devi",
+            "address1": "Akhara Bazar",
+            "ward": "3",
+            "contactNumber": "9445745874"
+        },
+        "AccountDetails": {
+            "meterNo": "2197783",
+            "accountNo": "91-R"
+        },
+        "Usage": {
+            "oldReading": "5244",
+            "newReading": "5385",
+            "netReadingM3": "141",
+            "netReadingLtr": "14100"
+        },
+        "chargesSummary": {
+            "prevBalance": "420.00"
+        },
+        "BillingInfo": {
+            "billNo": "42212",
+            "billDate": "2023-11-14",
+            "dueDate": "2023-11-26",
+            "billMonth": "November",
+            "sewerage": "yes"
+        }
+    },
+    {
+        "id": "2",
+        "Consumer": {
+            "name": "Sh Raghav Verma",
+            "address1": "Akhara Bazar",
+            "ward": "3",
+            "contactNumber": "9418613277"
+        },
+        "AccountDetails": {
+            "meterNo": "2197784",
+            "accountNo": "92-R"
+        },
+        "Usage": {
+            "oldReading": "5248",
+            "newReading": "5385",
+            "netReadingM3": "137",
+            "netReadingLtr": "13700"
+        },
+        "chargesSummary": {
+            "prevBalance": "10.00"
+        },
+        "BillingInfo": {
+            "billNo": "42213",
+            "billDate": "2023-11-14",
+            "dueDate": "2023-11-26",
+            "billMonth": "November",
+            "sewerage": "yes"
+        }
+    },
+    {
+        "id": "3",
+        "Consumer": {
+            "name": "Smt Monia Chodha",
+            "address1": "Akhara Bazar",
+            "ward": "3",
+            "contactNumber": "9418613277"
+        },
+        "AccountDetails": {
+            "meterNo": "2197785",
+            "accountNo": "93-R"
+        },
+        "Usage": {
+            "oldReading": "5250",
+            "newReading": "5385",
+            "netReadingM3": "135",
+            "netReadingLtr": "13500"
+        },
+        "chargesSummary": {
+            "prevBalance": "-100.00"
+        },
+        "BillingInfo": {
+            "billNo": "42214",
+            "billDate": "2023-11-14",
+            "dueDate": "2023-11-26",
+            "billMonth": "November",
+            "sewerage": "no"
+        }
+    }
+    
+]

@@ -1,11 +1,13 @@
+import { BillingData } from "@/utils/types";
 import React from "react";
 
-export default function BillHeader() {
+export default function BillHeader({data}:{data:BillingData}) {
+  const totalPayableAmount = (parseFloat(data.Usage.netReadingM3)*13.86).toFixed(2);
   return (
     <>
       <div className="flex justify-end">
         <p className="font-semibold text-xs md:text-base">
-          Meter No: 2197785 | Account No: 91-R
+          Meter No: {data.AccountDetails.meterNo} | Account No: {data.AccountDetails.accountNo}
         </p>
       </div>
 
@@ -18,30 +20,30 @@ export default function BillHeader() {
         </div>
         <div className="flex flex-col">
           <p className="font-semibold"> Consumer Information</p>
-          <p> Smt. Sita Devi</p>
-          <p> Akhara Bazar Kullu</p>
-          <p> Ward No. 3</p>
-          <p> 9418613277</p>
+          <p> {data.Consumer.name}</p>
+          <p> {data.Consumer.address1}</p>
+          <p> Ward No: {data.Consumer.ward}</p>
+          <p> {data.Consumer.contactNumber}</p>
         </div>
         <div className="flex flex-col font-semibold">
           <p className=""> Billing Information</p>
           <p>
-            Bill no: <span className="font-normal">42212</span>
+            Bill no: <span className="font-normal">{data.BillingInfo.billNo}</span>
           </p>
           <p>
-            Bill Date: <span className="font-normal">2023-12-14</span>
+            Bill Date: <span className="font-normal">{data.BillingInfo.billDate}</span>
           </p>
           <p>
-            Due Date: <span className="font-normal">2023-12-26</span>
+            Due Date: <span className="font-normal">{data.BillingInfo.dueDate}</span>
           </p>
           <p>
-            Bill Month: <span className="font-normal">December</span>
+            Bill Month: <span className="font-normal">{data.BillingInfo.billMonth}</span>
           </p>
           <p>
-            Swerage: <span className="font-normal">Yes</span>
+            Swerage: <span className="font-normal">{data.BillingInfo.sewerage}</span>
           </p>
           <p>
-            Amount Payble: <span className="font-normal">2468.00</span>
+            Amount Payble: <span className="font-normal">{totalPayableAmount}</span>
           </p>
         </div>
       </div>
