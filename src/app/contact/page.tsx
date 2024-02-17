@@ -1,10 +1,10 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Path from "@/components/Path";
+import Path from "@/components/Common/Path";
 import Iframe from "react-iframe";
 import { MailIcon, MapPin, PhoneIcon } from "lucide-react";
-import ContactCard from "@/components/ContactCard";
+import ContactCard from "@/components/Contact/ContactCard";
 
 export default function ContactPage() {
   return (
