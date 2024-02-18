@@ -10,7 +10,10 @@ export default function ChargesSummary({ data }: { data: BillingData }) {
     data.Usage.netReadingM3
   );
 
-  const amountAfterDueDate = totalPayable * 0.1;
+  const outstanding = (
+    totalPayable + parseFloat(data.chargesSummary.prevBalance)
+  );
+  const amountAfterDueDate = outstanding * 0.1;
   return (
     <div className="max-w-2xl">
       <div className="text-base md:text-xl font-bold mb-2 md:mb-4">
@@ -39,7 +42,7 @@ export default function ChargesSummary({ data }: { data: BillingData }) {
           <TableRow>
             <TableCell className="font-medium">Total Amount Payble:</TableCell>
             <TableCell className="text-right">
-              {totalPayable.toFixed(2)}
+              {outstanding.toFixed(2)}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -55,7 +58,7 @@ export default function ChargesSummary({ data }: { data: BillingData }) {
               Total Amount payable After Due Date:
             </TableCell>
             <TableCell className="text-right">
-              {Math.round(amountAfterDueDate + totalPayable).toFixed(2)}
+              {Math.round(amountAfterDueDate + outstanding).toFixed(2)}
             </TableCell>
           </TableRow>
         </TableBody>

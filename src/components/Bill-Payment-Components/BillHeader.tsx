@@ -51,7 +51,10 @@ export default function BillHeader({ data }: { data: BillingData }) {
           </p>
           <p>
             Amount Payble:{" "}
-            <span className="font-normal">{totalPayable.toFixed(2)}</span>
+            <span className="font-normal">
+              {(totalPayable +
+                parseFloat(data.chargesSummary.prevBalance)).toFixed(2)}
+            </span>
           </p>
         </div>
       </div>

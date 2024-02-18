@@ -12,7 +12,9 @@ export default function PaymentInfo({ data }: { data: BillingData }) {
 
   let currentDate = `${year}-${month}-${day}`;
   const { totalPayable } = GenerateBill(data.Usage.netReadingM3);
-
+  const FinalAmount = (
+    totalPayable + parseFloat(data.chargesSummary.prevBalance)
+  ).toFixed(2);
   return (
     <div className="flex flex-col md:flex-row gap-12 mt-10">
       <div className="max-w-md">
@@ -31,7 +33,9 @@ export default function PaymentInfo({ data }: { data: BillingData }) {
             </TableRow>
             <TableRow className="text-sm font-semibold">
               <TableCell>Payment Amount:</TableCell>
-              <TableCell className="text-left">{totalPayable.toFixed(2)}</TableCell>
+              <TableCell className="text-left">
+                {FinalAmount}
+              </TableCell>
             </TableRow>
             <TableRow className="text-sm font-semibold">
               <TableCell>Total Outstanding:</TableCell>

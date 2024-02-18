@@ -49,7 +49,9 @@ export default function RazorpayButton({ data }: { data: BillingData }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        amount: totalPayable.toFixed(2),
+        amount: (
+          totalPayable + parseFloat(data.chargesSummary.prevBalance)
+        ).toFixed(2),
         billNo: data.BillingInfo.billNo,
       }),
     }).then((t) => t.json());
