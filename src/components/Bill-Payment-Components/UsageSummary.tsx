@@ -1,5 +1,4 @@
 import React from "react";
-import Data from "@/app/utils/dummyData.json";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { BillingData } from "@/utils/types";
 

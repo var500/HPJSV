@@ -1,7 +1,6 @@
 import { CarouselDefault } from "@/components/Home-Components/Carousel";
 import Heading from "@/components/Home-Components/Heading";
 import TextTicker from "@/components/Home-Components/ticker";
-import Image from "next/image";
 
 const data = [
   "Water is Precious! Be Wise in Using It!!",

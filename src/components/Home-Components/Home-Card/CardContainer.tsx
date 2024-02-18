@@ -1,14 +1,6 @@
 import React from "react";
 import Card from "./card";
-import {
-  Banknote,
-  Laptop,
-  ListChecks,
-  ListTodoIcon,
-  LucideIcon,
-  Users,
-  Waves,
-} from "lucide-react";
+import { Banknote, Laptop, ListTodoIcon, Users, Waves } from "lucide-react";
 export default function CardContainer() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
