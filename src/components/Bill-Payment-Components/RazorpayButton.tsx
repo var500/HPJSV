@@ -1,8 +1,11 @@
+"use client";
 import { getRazorpayKey } from "@/utils/consts";
 import { BillingData } from "@/utils/types";
 import { Button } from "@material-tailwind/react";
 import React from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { useRouter } from "next/navigation";
+import { GenerateBill } from "@/utils/generatePayment";
 
 interface orderData {
   id: string;
@@ -24,12 +27,12 @@ function loadScript(src: any) {
   });
 }
 
-export default function RazorpayButton({data}:{data:BillingData}) {
+export default function RazorpayButton({ data }: { data: BillingData }) {
   const { toast } = useToast();
+  const router = useRouter();
   async function displayRazorpay(e: any) {
-    const currentWaterCharges = parseFloat(data.Usage.netReadingM3) * 13.86;
-    const swerageCharges = currentWaterCharges * 0.3;
-    const totalPayable = Math.round(currentWaterCharges + swerageCharges);
+    const { totalPayable } = GenerateBill(data.Usage.netReadingM3);
+
     const razorpayKey = getRazorpayKey();
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -59,7 +62,10 @@ export default function RazorpayButton({data}:{data:BillingData}) {
       order_id: endpointData.id,
       description: "HPJSV Bill Payment",
       image: "https://iph.hp.nic.in/NewHomePage/assets/img/logo-f.png",
-      //   callback_url: "http://localhost:1769/verify",
+      // callback_url: "http://localhost:3000/confirmation",
+      handler: function (response: Response) {
+        router.push(`/confirmation/${data.AccountDetails.meterNo}`);
+      },
       notes: {
         address: "SUB DIV NO. 1 GANDHI NAGAR",
       },
@@ -72,17 +78,15 @@ export default function RazorpayButton({data}:{data:BillingData}) {
         contact: data.Consumer.contactNumber,
       },
     };
-    try{
-      //@ts-ignore
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
-
-    }catch(err){
+    //@ts-ignore
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+    paymentObject.on("payment.failed", function (response: any) {
       toast({
         variant: "destructive",
-        title: "Invalid Transaction Details",
+        title: response.error.reason,
       });
-    }
+    });
   }
 
   return (

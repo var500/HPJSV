@@ -1,7 +1,18 @@
 import React from "react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { BillingData } from "@/utils/types";
+import { GenerateBill } from "@/utils/generatePayment";
 
-export default function PaymentInfo() {
+export default function PaymentInfo({ data }: { data: BillingData }) {
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  let currentDate = `${year}-${month}-${day}`;
+  const { totalPayable } = GenerateBill(data.Usage.netReadingM3);
+
   return (
     <div className="flex flex-col md:flex-row gap-12 mt-10">
       <div className="max-w-md">
@@ -9,22 +20,22 @@ export default function PaymentInfo() {
           Payment Information
         </div>
         <Table>
-          <TableBody className="border-2 text-xs md:text-base">
-            <TableRow>
-              <TableCell className="font-medium">Slip No:</TableCell>
-              <TableCell className="text-right">5248</TableCell>
+          <TableBody className="border-2 md:text-base">
+            <TableRow className="text-sm font-semibold">
+              <TableCell>Slip No:</TableCell>
+              <TableCell className="text-left">41326</TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">Payment Date:</TableCell>
-              <TableCell className="text-right">5385</TableCell>
+            <TableRow className="text-sm font-semibold">
+              <TableCell>Payment Date:</TableCell>
+              <TableCell className="text-left">{currentDate}</TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">Payment Amount:</TableCell>
-              <TableCell className="text-right">137</TableCell>
+            <TableRow className="text-sm font-semibold">
+              <TableCell>Payment Amount:</TableCell>
+              <TableCell className="text-left">{totalPayable.toFixed(2)}</TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell className="font-medium">Total Outstanding:</TableCell>
-              <TableCell className="text-right">0.00</TableCell>
+            <TableRow className="text-sm font-semibold">
+              <TableCell>Total Outstanding:</TableCell>
+              <TableCell className="text-left">0.00</TableCell>
             </TableRow>
           </TableBody>
         </Table>

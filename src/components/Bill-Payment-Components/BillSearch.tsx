@@ -17,7 +17,7 @@ export default function BillSearch({
   function handleAccountSearch() {
     const BillingDetails = Data.filter(
       (item) => item.AccountDetails.accountNo === account
-    );
+    ) as BillingData[];
     if (BillingDetails.length > 0) {
       onFilterData(BillingDetails[0]);
     } else {

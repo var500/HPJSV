@@ -1,13 +1,14 @@
 import React from "react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { BillingData } from "@/utils/types";
+import { GenerateBill } from "@/utils/generatePayment";
 
 export default function ChargesSummary({ data }: { data: BillingData }) {
   const prevBalance =
     parseFloat(data?.chargesSummary?.prevBalance).toFixed(2) || "0.00";
-  const currentWaterCharges = parseFloat(data.Usage.netReadingM3) * 13.86;
-  const swerageCharges = currentWaterCharges * 0.3;
-  const totalPayable = Math.round(currentWaterCharges + swerageCharges);
+  const { currentWaterCharges, swerageCharges, totalPayable } = GenerateBill(
+    data.Usage.netReadingM3
+  );
 
   const amountAfterDueDate = totalPayable * 0.1;
   return (
