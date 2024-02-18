@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <CarouselDefault />
-      <div className="px-20 py-8 ">
+      <div className="px-10 md:px-28 py-8 ">
         <TextTicker messages={data} />
         <Heading />
       </div>

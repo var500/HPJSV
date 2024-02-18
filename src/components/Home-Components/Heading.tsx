@@ -1,10 +1,12 @@
 import React from "react";
 import Title from "./Title";
+import ImportantLinks from "./ImportantLinks";
+import CardContainer from "./Home-Card/CardContainer";
 
 export default function Heading() {
   return (
-    <div className="flex flex-col justify-center pb-5 mt-5 gap-5 px-8">
-      <Title />
+    <div className="flex flex-col justify-center pb-5 mt-5 gap-5">
+      <Title text={"जल शक्ति विभाग"}/>
       <p className="text-justify text-base font-normal">
         This web portal has been developed as a complete ERP solution to not
         only automate the functioning of the entire Department, but also to
@@ -20,6 +22,8 @@ export default function Heading() {
         pay their bills in online mode. The consumers can also apply for new
         water connections online, using this portal.
       </p>
+      <ImportantLinks />
+      <CardContainer />
     </div>
   );
 }
