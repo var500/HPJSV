@@ -1,5 +1,5 @@
 import { CarouselDefault } from "@/components/Home-Components/Carousel";
-import Body from "@/components/Home-Components/Heading";
+import Body from "@/components/Home-Components/Body";
 import TextTicker from "@/components/Home-Components/ticker";
 
 const data = [
