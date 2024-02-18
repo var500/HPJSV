@@ -4,7 +4,7 @@ import ImportantLinks from "./ImportantLinks";
 import CardContainer from "./Home-Card/CardContainer";
 import { LogoCarousel } from "./LogoCarousel";
 
-export default function Heading() {
+export default function Body() {
   return (
     <div className="flex flex-col justify-center pb-5 mt-5 gap-5">
       <Title text={"जल शक्ति विभाग"}/>

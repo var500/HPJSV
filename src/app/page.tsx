@@ -1,5 +1,5 @@
 import { CarouselDefault } from "@/components/Home-Components/Carousel";
-import Heading from "@/components/Home-Components/Heading";
+import Body from "@/components/Home-Components/Heading";
 import TextTicker from "@/components/Home-Components/ticker";
 
 const data = [
@@ -16,7 +16,7 @@ export default function Home() {
       <CarouselDefault />
       <div className="px-10 md:px-28 py-8 ">
         <TextTicker messages={data} />
-        <Heading />
+        <Body />
       </div>
     </>
   );
