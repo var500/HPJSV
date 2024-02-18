@@ -1,5 +1,3 @@
-import { MapPin } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 export default function ContactCard({
