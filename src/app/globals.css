@@ -67,12 +67,13 @@
 }
 
 @keyframes marquee {
-  0% { transform: translateX(400%); }
+  0% { transform: translateX(900%); }
   100% { transform: translateX(-100%); }
 }
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+  transform-origin: top left; /* Adjust as needed */
 }
 
 @layer base {
