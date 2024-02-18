@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-center bg-[#404040] h-12">
-        <p className="text-white font-sans mt-3">Website Rewamped by Varun Chodha</p>
+        <p className="text-white font-sans mt-3">Website Revamped by Varun Chodha</p>
       </div>
     </>
   );
