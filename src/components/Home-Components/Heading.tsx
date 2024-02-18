@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import ImportantLinks from "./ImportantLinks";
 import CardContainer from "./Home-Card/CardContainer";
+import { LogoCarousel } from "./LogoCarousel";
 
 export default function Heading() {
   return (
@@ -24,6 +25,7 @@ export default function Heading() {
       </p>
       <ImportantLinks />
       <CardContainer />
+      <LogoCarousel />
     </div>
   );
 }
