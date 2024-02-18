@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Common/Footer";
 import { StickyNavbar } from "@/components/Common/Navbar";
 import { Toaster } from "@/components/ui/toaster"
+import ScrollToTopButton from "@/components/Common/ScrollToTopButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <StickyNavbar />
 
         {children}
+        <ScrollToTopButton />
         <Toaster />
         <Footer />
       </body>
