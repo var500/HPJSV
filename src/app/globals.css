@@ -65,7 +65,16 @@
     --ring: 0 0% 83.1%;
   }
 }
- 
+
+@keyframes marquee {
+  0% { transform: translateX(400%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border;
