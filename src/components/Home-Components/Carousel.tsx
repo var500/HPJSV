@@ -6,7 +6,7 @@ import img2 from "@/assets/img2.png";
 import img3 from "@/assets/img3.png";
 export function CarouselDefault() {
   return (
-    <Carousel className="max-h-64 lg:max-h-96 overflow-hidden" placeholder={"Carousel"}>
+    <Carousel className="max-h-64 lg:max-h-96 overflow-hidden" placeholder={"Carousel"} autoplay>
       <Image
         src={img1}
         alt="image 1"
