@@ -6,6 +6,7 @@ import { StickyNavbar } from "@/components/Common/Navbar";
 import { Toaster } from "@/components/ui/toaster"
 import ScrollToTopButton from "@/components/Common/ScrollToTopButton";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
 
         {children}
         <Analytics />
+        <SpeedInsights />
         <ScrollToTopButton />
         <Toaster />
         <Footer />
