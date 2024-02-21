@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   MobileNav,
@@ -9,19 +9,13 @@ import {
   Collapse,
 } from "@material-tailwind/react";
 
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-
 import Image from "next/image";
 import banner from "@/assets/jsv.png";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 export function StickyNavbar() {
-  const [openNav, setOpenNav] = React.useState(false);
-
+  const [openNav, setOpenNav] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -46,14 +40,17 @@ export function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-bold hover:text-blue-400 text-lg"
         placeholder={undefined}
+        onClick={() => setMenuOpen(!menuOpen)}
+        onMouseEnter={() => setMenuOpen(true)}
+        onMouseLeave={() => setMenuOpen(false)}
       >
-        <HoverCard openDelay={2} closeDelay={1}>
-          <HoverCardTrigger className="flex gap-2 items-center hover:cursor-pointer hover:text-blue-400">
-            Citizen Services
-            <ChevronDown size={20} />
-          </HoverCardTrigger>
-          <HoverCardContent className="relative w-[21rem] z-30">
-            <div className="flex flex-col gap-4 text-lg">
+        <div className="flex items-center gap-3">
+          Citizen Services
+          <ChevronDown />
+        </div>
+        {menuOpen && (
+          <div className="absolute w-72 md:w-[21rem] bg-white rounded-md z-10 p-4 top-32 md:top-14 right-5 md:right-24 border-2">
+            <div className="flex flex-col gap-3 md:gap-4 text-sm md:text-lg text-black">
               <Link
                 href={""}
                 className="hover:text-blue-400 font-bold hover:cursor-pointer"
@@ -91,8 +88,8 @@ export function StickyNavbar() {
                 Progress of IPH Contracts
               </Link>
             </div>
-          </HoverCardContent>
-        </HoverCard>
+          </div>
+        )}
       </Typography>
       <Typography
         as="li"
